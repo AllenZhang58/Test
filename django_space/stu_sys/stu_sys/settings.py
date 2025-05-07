@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #配置子应用
+    'stu_info.apps.SysInfoConfig'
 ]
 
 MIDDLEWARE = [
