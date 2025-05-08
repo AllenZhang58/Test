@@ -16,7 +16,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -24,8 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-5)!-g(2fef4%$r1x^+$u3^5h((kyi8*=)f3q^uq*ced-f(wj_z'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# 开发调试模式， True为开启状态，开始时的状态； False为关闭模式，发布上线时的状态
 DEBUG = True
-
+# 允许以什么样的形式来访问本项目，可以用‘*’的方式或‘外网IP地址 or ip指向的域名’
 ALLOWED_HOSTS = []
 
 
