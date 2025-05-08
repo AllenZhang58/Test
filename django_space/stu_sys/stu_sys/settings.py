@@ -9,9 +9,9 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
+import os.path
 import sys
 from pathlib import Path
-from sys_info import apps
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -30,6 +30,7 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+# 子应用关联到主系统中的配置
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -54,10 +55,17 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'stu_sys.urls'
 
+'''
+系统模版的配置
+os.path.join(a, b)  拼接字符串，即str(a + b)
+a： BASE_DIR 系统的根目录文件夹名称，即project的root name
+b： 'templates' 系统中存放模版的文件大目录
+'''
+#模版配置
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -76,6 +84,7 @@ WSGI_APPLICATION = 'stu_sys.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+#数据库设置
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',

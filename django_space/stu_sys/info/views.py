@@ -14,4 +14,14 @@ from django.http import HttpRequest
 #此处希望用户可以通过访问“ip：端口号/index/”来访问该视图/函数
 def index(request):
 
-    return HttpResponse('OK')
+    # return HttpResponse('OK')
+    '''
+        render(request, template_name, context=None)  渲染模版的函数
+        request: 函数参数
+        template_name: 模版路径+模版文件名字
+        context=数据库查询数据结果:
+    '''
+    context = {
+        'name' : '双12惊喜连连，点击有惊喜！！'
+    }
+    return render(request, 'info/index.html', context)
